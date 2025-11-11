@@ -72,7 +72,7 @@ export class GitHubClient {
 		}
 	}
 
-	async enableWorkflow(owner: string, repo: string, workflowId: number): Promise<void> {
+	async enableWorkflow(owner: string, repo: string, workflowId: number|string): Promise<void> {
 		console.log(`Enabling ${workflowId}`)
 		const url = `${this.baseUrl}/repos/${owner}/${repo}/actions/workflows/${workflowId}/enable`;
 

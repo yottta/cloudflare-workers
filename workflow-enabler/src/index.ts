@@ -64,6 +64,6 @@ async function enableWorkflowIfDisabled(github: GitHubClient, repo: { owner: str
 	if (!ghWorkflow) {
 		return
 	}
-	await github.enableWorkflow(repo.owner, repo.repo, ghWorkflow.id)
+	await github.enableWorkflow(repo.owner, repo.repo, workflow.name)
 	// }
 }
