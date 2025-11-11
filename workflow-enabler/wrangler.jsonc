@@ -9,10 +9,10 @@
   "compatibility_date": "2025-07-22",
   "observability": {
     "enabled": true
-  },
-  "triggers": {
-    "crons": ["*/15 * * * *"]
   }
+//  "triggers": {
+//    "crons": ["*/15 * * * *"]
+//  }
 
   /**
    * Note: Secrets should be set using wrangler secret put:
