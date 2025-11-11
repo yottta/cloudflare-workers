@@ -60,7 +60,10 @@ async function checkWorkflow(env: Env, github: GitHubClient, repo: { owner: stri
 async function enableWorkflowIfDisabled(github: GitHubClient, repo: { owner: string; repo: string }, workflow: WorkflowConfig) {
 	const ghWorkflow = await github.getWorkflow(repo.owner, repo.repo, workflow.name);
 	console.log(`Workflow ${workflow.name} status is ${ghWorkflow?.state}`)
-	if (ghWorkflow?.state == "disabled_inactivity") {
-		await github.enableWorkflow(repo.owner, repo.repo, ghWorkflow.id)
+	// if (ghWorkflow?.state == "disabled_inactivity") {
+	if (!ghWorkflow) {
+		return
 	}
+	await github.enableWorkflow(repo.owner, repo.repo, ghWorkflow.id)
+	// }
 }
