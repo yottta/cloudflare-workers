@@ -78,7 +78,7 @@ export class GitHubClient {
 
 		try {
 			const response = await fetch(url, {
-				method: 'POST',
+				method: 'PUT',
 				headers: {
 					Authorization: `Bearer ${this.token}`,
 					Accept: 'application/vnd.github.v3+json',
